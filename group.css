@@ -1,0 +1,24 @@
+
+
+.group-background {
+  background-position: center bottom;
+  background-size: cover;
+  height: 250px;
+  margin-bottom: -50px;
+  position: relative;
+  z-index: -1;
+}
+
+.group-container-shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background-image: linear-gradient(to bottom left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+  z-index: 0;
+}
+
+.group-background div:nth-child(2) {
+  z-index: 1;
+}

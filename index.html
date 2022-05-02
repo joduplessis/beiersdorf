@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/>
+
+    <link href="styles.css" rel="stylesheet" />
+    <link href="utilities.css" rel="stylesheet" />
+    <link href="text.css" rel="stylesheet" />
+    <link href="tag.css" rel="stylesheet" />
+    <link href="avatar.css" rel="stylesheet" />
+    <link href="button.css" rel="stylesheet" />
+    <link href="featured.css" rel="stylesheet" />
+    <link href="group.css" rel="stylesheet" />
+
+    <script src="https://unpkg.com/feather-icons"></script>
+		<script src= "https://cdn.zingchart.com/zingchart.min.js"></script>
+		<script>
+        zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+	     ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9","ee6b7db5b51705a13dc2339db3edaf6d"];
+     </script>
+     <style>
+     .zc-ref {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="row align-items-start h-100 w-100">
+
+      <div class="row scroll h-100 align-items-start align-content-start justify-content-start">
+
+        <div class="column align-items-stretch">
+
+          <div class="row p-20" style="background: white">
+
+            <div class="row">
+              <!-- <div class="text w-heavy h3 inverted">NIVEA</div> -->
+              <img src="images/logo.png" height="50"/>
+            </div>
+
+            <div class="search-container row">
+              <span class="x20">
+                <i data-feather="search"></i>
+              </span>
+              <input type="text" placeholder="Search" class="text inverted h4 w-light" />
+            </div>
+
+            <button>
+              <span class="x20">
+                <i data-feather="grid"></i>
+              </span>
+            </button>
+
+            <button>
+              <span class="x20">
+                <i data-feather="bell"></i>
+              </span>
+            </button>
+
+            <button class="btn-solid mr-10 ml-10">
+              <span class="inverted x20">
+                <i data-feather="plus"></i>
+              </span>
+              <span class="text h5 w-light mr-5 ml-10 inverted">
+                Create a new space
+              </span>
+            </button>
+
+            <button class="btn-solid mr-20 ml-10">
+              <span class="inverted x20">
+                <i data-feather="plus"></i>
+              </span>
+              <span class="text h5 w-light mr-5 ml-10 inverted">
+                Add Post
+              </span>
+            </button>
+
+            <div class="avatar" style="background-image: url(images/profile-woman.png)"></div>
+          </div>
+
+          <div class="group-background row" style="background-image: url(images/group-1.png)">
+            <div class="group-container-shadow"></div>
+            <div class="column flex-1 align-items-center">
+              <div class="w-80 mb-10">
+                <div class="tag inverted text">Group</div>
+              </div>
+              <div class="text w-80 h1 pb-5 w-heavy inverted">Jo'burg immersions</div>
+              <div class="w-80">
+                <div class="text w-80 h5 w-light inverted">
+                  Group for keeping everyone up to date about our Jo'burg immersion happening soon.
+                  Feel free to post any questions & comments here!
+                  We will also be giving some prizes afterwards, so stay tuned!
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="featured-container hide w-100 pb-20 column">
+            <div class="row">
+              <div class="text capitalize h7 mb-10 pl-20 flexer">
+                All Your Spaces
+                <span class="text w-heavy h7 ml-5 muted">3</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="featurette highlight" style="background-image: url(images/space-1.png)">
+                <div class="overlay"></div>
+                <div class="text h3 pl-20 mb-5 inverted w-light">
+                  NIVEA
+                </div>
+                <div class="text h5 pl-20 pb-20 pr-20 inverted w-light">
+                   Personal care brand that specializes in body-care.
+                </div>
+              </div>
+              <div class="featurette" style="background-image: url(images/space-2.png)">
+                <div class="overlay"></div>
+                <div class="text h3 pl-20 mb-5 inverted w-light">
+                  Beiersdorf
+                </div>
+                <div class="text h5 pl-20 pb-20 pr-20 inverted w-light">
+                  Personal-care products and pressure-sensitive adhesives.
+                </div>
+              </div>
+              <div class="featurette" style="background-image: url(images/space-3.png)">
+                <div class="overlay"></div>
+                <div class="text h3 pl-20 mb-5 inverted w-light">
+                  Labello
+                </div>
+                <div class="text h5 pl-20 pb-20 pr-20 inverted w-light">
+                  Labello is a brand of lip balm stick. It is produced by Beiersdorf AG in Germany and Austria.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal hide">
+            <div class="panel w-80 p-20">
+              <div class="row border-bottom pb-20 mb-20">
+                <div class="text h4 flex-1">Insights</div>
+                <span class="x20">
+                  <i data-feather="x"></i>
+                </span>
+              </div>
+
+              <div class="row border-bottom pb-20 mb-20">
+                <div class="text h6 capitalize mr-20 muted">Overview</div>
+                <div class="text h6 capitalize mr-20">Ethinicity & Age</div>
+                <div class="text h6 capitalize mr-20 muted">Comments</div>
+                <div class="text h6 capitalize mr-20 muted">Likes & Dislikes</div>
+                <div class="flexer"></div>
+                <span class="x20 muted mr-10">
+                  <i data-feather="download-cloud"></i>
+                </span>
+                <div class="text h6 capitalize muted">Export</div>
+              </div>
+
+              <div class="row">
+                <div id='myChart' class="insights-chart w-100"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-20 justify-content-center">
+            <div class="row align-items-start w-80">
+
+              <div class="sidebar flex-1">
+
+                <div class="panel column mb-20 p-20">
+
+                  <div class="row w-100">
+                    <div class="column flexer">
+                      <span class="text ml-10 h5">Thadie Mhlobho</span>
+                      <span class="text ml-10 h7 muted capitalize">Research Manager</span>
+                    </div>
+                    <div class="avatar" style="background-image: url(images/profile-woman.png)"></div>
+                  </div>
+
+                </div>
+
+                <div class="panel column mb-20 p-20">
+
+                  <div class="row w-100 mb-10 button">
+                    <span class="x20">
+                      <i data-feather="home"></i>
+                    </span>
+                    <div class="text flexer ml-10 h5">Home</div>
+                    <div class="tag text h8 inverted">12</div>
+                  </div>
+
+                  <div class="row w-100 mb-10">
+                    <span class="x20">
+                      <i data-feather="users"></i>
+                    </span>
+                    <span class="text flexer ml-10 h5">Members</span>
+                    <div class="tag text h8 inverted">23</div>
+                  </div>
+
+                  <div class="row w-100 mb-10">
+                    <span class="x20">
+                      <i data-feather="pie-chart"></i>
+                    </span>
+                    <span class="text flexer ml-10 h5">Analytics</span>
+                    <span class="text muted">
+                      <i data-feather="more-horizontal"></i>
+                    </span>
+                  </div>
+
+                  <div class="row w-100 mb-10">
+                    <span class="x20">
+                      <i data-feather="settings"></i>
+                    </span>
+                    <span class="text flexer ml-10 h5">Settings</span>
+                    <span class="text muted">
+                      <i data-feather="more-horizontal"></i>
+                    </span>
+                  </div>
+
+                </div>
+
+                <div class="row pb-10">
+                  <div class="text h7 flexer muted capitalize">Your Groups</div>
+                  <div class="muted x15">
+                    <i data-feather="plus-circle"></i>
+                  </div>
+                </div>
+
+                <div class="panel column mb-20 p-20">
+
+                  <div class="row w-100 mb-10">
+                    <div class="avatar small" style="background-image: url(images/group-1.png)"></div>
+                    <span class="text flexer ml-10 h5">Jo'burg immer...</span>
+                    <div class="tag text h8 inverted">+3</div>
+                  </div>
+
+                  <div class="row w-100 mb-10">
+                    <div class="avatar small" style="background-image: url(images/group-2.png)"></div>
+                    <span class="text flexer ml-10 h5">Promos & sales</span>
+                    <div class="tag text h8 inverted">+11</div>
+                  </div>
+
+                  <div class="row w-100">
+                    <div class="avatar small" style="background-image: url(images/group-3.png)"></div>
+                    <span class="text flexer ml-10 h5">Feedback</span>
+                  </div>
+
+                </div>
+
+                <div class="row pb-10">
+                  <div class="muted x15 mr-5">
+                    <i data-feather="bookmark"></i>
+                  </div>
+                    <div class="text h7 flexer muted capitalize flexer">Your Saved Posts</div>
+                    <div class="muted x15">
+                      <i data-feather="chevron-right"></i>
+                    </div>
+                </div>
+
+                <div class="panel column mb-20 p-20">
+
+                  <div class="row w-100 mb-10">
+                    <div class="avatar small" style="background-image: url(images/post-2.png)"></div>
+                    <span class="text flexer ml-10 h5">New product launch</span>
+                    <span class="text muted">
+                      <i data-feather="more-horizontal"></i>
+                    </span>
+                  </div>
+
+                  <div class="row w-100 mb-10">
+                    <div class="avatar small" style="background-image: url(images/post-1.png)"></div>
+                    <span class="text flexer ml-10 h5">Tell us what you...</span>
+                    <span class="text muted">
+                      <i data-feather="more-horizontal"></i>
+                    </span>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="main flex-2-5 pl-20 pr-20">
+
+                <div class="panel column mb-20 p-20 row">
+
+                  <div class="column flexer">
+
+                    <div class="compose-container row flex-1">
+                      <input type="text" placeholder="What's on your mind?" class="text w-light h3"/>
+                    </div>
+
+                    <div class="compose-container row flex-1">
+                      <input type="text" placeholder="#add #some #tags" class="text h5"/>
+                    </div>
+                  </div>
+
+                  <div class="row">
+
+                    <div class="button btn-outline row mr-10">
+                      <div class="muted x20">
+                        <i data-feather="image"></i>
+                      </div>
+
+                    </div>
+
+                    <div class="button btn-outline row mr-10">
+                      <div class="muted x20">
+                        <i data-feather="video"></i>
+                      </div>
+                    </div>
+
+                    <div class="button btn-outline row mr-10">
+                      <div class="muted x20">
+                        <i data-feather="check-circle"></i>
+                      </div>
+                    </div>
+
+                    <div class="button btn-outline row">
+                      <div class="muted x20">
+                        <i data-feather="crosshair"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="panel column mb-20 p-20 row">
+                  <div class="mr-20 text capitalize h6 w-heavy highlight">My Feed</div>
+                  <div class="mr-20 text capitalize h6 w-heavy">Popular</div>
+                  <div class="mr-20 text capitalize h6 w-heavy">Most liked</div>
+                  <div class="mr-20 text capitalize h6 w-heavy">Most disliked</div>
+                  <div class="mr-20 text capitalize h6 w-heavy">Saved</div>
+
+                </div>
+
+                <div class="panel column mb-20 p-20 row align-items-start">
+
+                  <div class="avatar large" style="background-image: url(images/profile-man.png)"></div>
+
+                  <div class="col flexer ml-20">
+
+                    <div class="row mb-10">
+                      <div class="text h4 w-light">
+                        Hi guys & gals, we are putting together a list of people who want to participate.
+                        Like this post if you want us to contact you. You will need to be available after hours
+                        next week!
+                      </div>
+                    </div>
+
+                    <div class="row mb-10">
+                      <div class="tag text mr-10 w-light inverted">Jo'burg immersions</div>
+                      <div class="text h5 mr-10">Nofo Ayanda</div>
+                      <div class="text h5 mr-10 muted">(@nofoayanda)</div>
+                      <div class="text h7 mr-10 muted">6m ago</div>
+                    </div>
+
+                    <div class="row mb-10">
+                      <div class="text h6 muted mr-10">#immersions</div>
+                      <div class="text h6 muted mr-10">#joburg</div>
+                    </div>
+
+                    <div class="row mb-10 pt-20 border-top">
+
+                      <div class="avatar small" style="background-image: url(images/profile-guest.png)"></div>
+
+                      <div class="col flexer ml-20">
+
+                        <div class="row mb-10">
+
+                          <div class="muted x15 mr-10">
+                            <i data-feather="corner-up-left"></i>
+                          </div>
+                          <div class="text h6 mr-10">Lerato Khuzwayo</div>
+                          <div class="text h6 mr-10 muted">(@leratokhuzwayo)</div>
+                          <div class="text h7 mr-10 muted">6m ago</div>
+                        </div>
+
+                        <div class="row mb-10">
+                          <div class="text w-light h6">
+                            Yes please! I'll be available next week, but only on Wednesday from 6pm! Is that okay? I think I can do a bit earlier, but I will need to confirm.
+                          </div>
+                        </div>
+
+                        <div class="row">
+
+                          <!-- No responders --> <div class="button row"></div>
+
+                          <div class="button row">
+                            <div class="muted x15 mr-5">
+                              <i data-feather="smile"></i>
+                            </div>
+                          </div>
+
+                          <div class="flexer"></div>
+
+                          <div class="button row mr-10">
+                            <div class="muted x15 mr-5">
+                              <i data-feather="thumbs-down"></i>
+                            </div>
+                            <div class="text h6 muted">0</div>
+                          </div>
+
+                          <div class="button row mr-10">
+                            <div class="muted x15 mr-5">
+                              <i data-feather="thumbs-up"></i>
+                            </div>
+                            <div class="text h6 muted">1</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mb-10 pt-20 border-top">
+
+                      <div class="avatar small" style="background-image: url(images/profile-man.png)"></div>
+
+                      <div class="col flexer ml-20">
+
+                        <div class="row mb-10">
+
+                          <div class="muted x15 mr-10">
+                            <i data-feather="corner-up-left"></i>
+                          </div>
+                          <div class="tag text mr-10 w-light inverted">Works @ NIVEA</div>
+                          <div class="text h6 mr-10">Nofo Ayanda</div>
+                          <div class="text h6 mr-10 muted">(@nofoayanda)</div>
+                          <div class="text h7 mr-10 muted">6m ago</div>
+                        </div>
+
+                        <div class="row mb-10">
+                          <div class="text w-light h6">
+                            Hi Lerato, that's great to hear. Next Wednesday at 6pm is perfect! See you then.
+                          </div>
+                        </div>
+
+                        <div class="row">
+
+                          <div class="button row mr-10">
+                            😊
+                            <div class="text h8 capitalize muted">Lerato</div>
+                          </div>
+
+                          <div class="button row">
+                            <div class="muted x15">
+                              <i data-feather="smile"></i>
+                            </div>
+                          </div>
+
+                          <div class="flexer"></div>
+
+                          <div class="button row mr-10">
+                            <div class="muted x15 mr-5">
+                              <i data-feather="thumbs-down"></i>
+                            </div>
+                            <div class="text h6 muted">0</div>
+                          </div>
+
+                          <div class="button row mr-10">
+                            <div class="muted x15 mr-5">
+                              <i data-feather="thumbs-up"></i>
+                            </div>
+                            <div class="text h6 muted">3</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mb-10 pt-20 border-top">
+
+                      <div class="avatar small" style="background-image: url(images/profile-man.png)"></div>
+
+                      <div class="col flexer ml-10">
+
+                        <div class="row">
+
+                          <div class="column flexer">
+
+                            <div class="compose-container row flex-1">
+                              <input type="text" placeholder="Type your reply..." class="text w-light h5"/>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mt-20 border-top pt-20">
+
+                      <div class="button row btn-outline mr-20">
+                        <div class="muted x20 mr-10">
+                          <i data-feather="message-circle"></i>
+                        </div>
+                        <div class="text h6 muted">2 Comments</div>
+                      </div>
+
+                      <div class="button row mr-20">
+                        <div class="muted x20 mr-10">
+                          <i data-feather="thumbs-down"></i>
+                        </div>
+                        <div class="text h6 muted">0 Dislikes</div>
+                      </div>
+
+                      <div class="button row">
+                        <div class="muted x20 mr-10">
+                          <i data-feather="thumbs-up"></i>
+                        </div>
+                        <div class="text h6 muted">7 Likes</div>
+                      </div>
+
+                      <div class="flexer"></div>
+
+                      <div class="button row mr-10">
+                        <div class="muted x20">
+                          <i data-feather="bookmark"></i>
+                        </div>
+                      </div>
+
+                      <div class="button row btn-outline">
+                        <div class="muted x20 mr-10">
+                          <i data-feather="activity"></i>
+                        </div>
+                        <div class="text h6 muted">Insights</div>
+                      </div>
+
+                    </div>
+
+
+                  </div>
+
+                </div>
+
+                <div class="panel column mb-20 p-20 row align-items-start">
+
+                  <div class="avatar large" style="background-image: url(images/profile-man.png)"></div>
+
+                  <div class="col flexer ml-20">
+
+                    <div class="row mb-10">
+                      <div class="text h4 w-light">
+                        Tell us about your NIVEA stories. We are gathering stories from your favourite NIVEA experiences. We'll be giving away a hamper for our favourite one!
+                      </div>
+                    </div>
+
+                    <div class="row mb-10">
+                      <div class="tag text mr-10 w-light inverted">Promos & sales</div>
+                      <div class="text h5 mr-10">Nofo Ayanda</div>
+                      <div class="text h5 mr-10 muted">(@nofoayanda)</div>
+                      <div class="text h7 mr-10 muted">Yesterday</div>
+                    </div>
+
+                    <div class="row mb-10">
+                      <div class="text h6 muted mr-10">#share</div>
+                      <div class="text h6 muted mr-10">#stories</div>
+                    </div>
+
+                    <div class="row mt-20 border-top pt-20">
+
+                      <div class="button row btn-outline mr-20">
+                        <div class="muted x20 mr-10">
+                          <i data-feather="message-circle"></i>
+                        </div>
+                        <div class="text h6 muted">3 Comments</div>
+                      </div>
+
+                      <div class="button row mr-20">
+                        <div class="muted x20 mr-10">
+                          <i data-feather="thumbs-down"></i>
+                        </div>
+                        <div class="text h6 muted">0 Dislikes</div>
+                      </div>
+
+                      <div class="button row">
+                        <div class="muted x20 mr-10">
+                          <i data-feather="thumbs-up"></i>
+                        </div>
+                        <div class="text h6 muted">4 Likes</div>
+                      </div>
+
+                      <div class="flexer"></div>
+
+                      <div class="button row mr-10">
+                        <div class="muted x20">
+                          <i data-feather="bookmark"></i>
+                        </div>
+                      </div>
+
+                      <div class="button row btn-outline">
+                        <div class="muted x20 mr-10">
+                          <i data-feather="activity"></i>
+                        </div>
+                        <div class="text h6 muted">Insights</div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="panel column mb-20 p-20 column">
+
+                  <div class="hero mb-20" style="background-image: url(images/post-1.png)"></div>
+
+                  <div class="row align-items-start">
+
+                    <div class="avatar large" style="background-image: url(images/profile-woman.png)"></div>
+
+                    <div class="col flexer ml-20">
+
+                      <div class="row mb-10">
+                        <div class="text h4 w-light">Tell us what you think about our new summer advert!</div>
+                      </div>
+
+                      <div class="row mb-10">
+                        <div class="tag text mr-10 w-light inverted">Feedback</div>
+                        <div class="text h5 mr-10">Thadie Mhlobho</div>
+                        <div class="text h5 mr-10 muted">(@thadiemhlobo)</div>
+                        <div class="text h7 mr-10 muted">23 Feb 2019</div>
+                      </div>
+
+                      <div class="row mb-10">
+                        <div class="text h6 muted mr-10">#new-ad</div>
+                        <div class="text h6 muted mr-10">#summer</div>
+                        <div class="text h6 muted mr-10">#feedback</div>
+                      </div>
+
+                      <div class="row mt-20 border-top pt-20">
+
+                        <div class="button row btn-outline mr-20">
+                          <div class="muted x20 mr-10">
+                            <i data-feather="message-circle"></i>
+                          </div>
+                          <div class="text h6 muted">5 Comments</div>
+                        </div>
+
+                        <div class="button row mr-20">
+                          <div class="muted x20 mr-10">
+                            <i data-feather="thumbs-down"></i>
+                          </div>
+                          <div class="text h6 muted">0 Dislikes</div>
+                        </div>
+
+                        <div class="button row">
+                          <div class="highlight x20 mr-10">
+                            <i data-feather="thumbs-up"></i>
+                          </div>
+                          <div class="text h6 muted">2 Likes</div>
+                        </div>
+
+                        <div class="flexer"></div>
+
+                        <div class="button row mr-10">
+                          <div class="highlight x20">
+                            <i data-feather="bookmark"></i>
+                          </div>
+                        </div>
+
+                        <div class="button row btn-outline">
+                          <div class="muted x20 mr-10">
+                            <i data-feather="activity"></i>
+                          </div>
+                          <div class="text h6 muted">Insights</div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="sidebar flex-1">
+
+                <div class="panel column mb-20 p-20">
+
+                  <div class="row w-100 mb-20 border-bottom pb-20">
+                    <span class="text flexer ml-10 h5 w-heavy">Popular tags</span>
+                  </div>
+
+                  <div class="row w-100 mb-10">
+                    <span class="x20">
+                      <i data-feather="hash"></i>
+                    </span>
+                    <span class="text flexer ml-10 h5">joburg</span>
+                  </div>
+
+                  <div class="row w-100 mb-10">
+                    <span class="x20">
+                      <i data-feather="hash"></i>
+                    </span>
+                    <span class="text flexer ml-10 h5">immersions</span>
+                  </div>
+
+                  <div class="row w-100 mb-10">
+                    <span class="x20">
+                      <i data-feather="hash"></i>
+                    </span>
+                    <span class="text flexer ml-10 h5">feedback</span>
+                  </div>
+
+                  <div class="row w-100 mb-10">
+                    <span class="x20">
+                      <i data-feather="hash"></i>
+                    </span>
+                    <span class="text flexer ml-10 h5">stories</span>
+                  </div>
+
+                  <div class="row w-100 mb-10">
+                    <span class="x20">
+                      <i data-feather="hash"></i>
+                    </span>
+                    <span class="text flexer ml-10 h5">summer</span>
+                  </div>
+
+                </div>
+
+                <div class="row pb-10">
+                  <div class="text h7 flexer muted capitalize flexer">People</div>
+                  <div class="muted x15">
+                    <i data-feather="plus-circle"></i>
+                  </div>
+                </div>
+
+                <div class="panel column mb-20 p-20">
+
+                  <div class="row w-100 mb-10">
+                    <div class="avatar small" style="background-image: url(images/profile-man.png)"></div>
+                    <span class="text flexer ml-10 h5">Nofo Ayanda</span>
+                    <span class="text muted">
+                      <i data-feather="more-horizontal"></i>
+                    </span>
+                  </div>
+
+                  <div class="row w-100 mb-10">
+                    <div class="avatar small" style="background-image: url(images/profile-woman.png)"></div>
+                    <span class="text flexer ml-10 h5">Thadie Mhlobho</span>
+                    <span class="text muted">
+                      <i data-feather="more-horizontal"></i>
+                    </span>
+                  </div>
+
+                  <div class="row w-100 mb-10">
+                    <div class="avatar small" style="background-image: url(images/profile-guest.png)"></div>
+                    <div class="column flexer ml-10">
+                      <span class="text h5">Lerato Khuzwayo</span>
+                      <span class="text h6 muted w-light">Consumer</span>
+                    </div>
+                    <span class="text muted">
+                      <i data-feather="more-horizontal"></i>
+                    </span>
+                  </div>
+
+                </div>
+
+                <div class="panel column mb-20 p-20">
+
+                  <div class="text capitalize h8 muted w-light mb-10">
+                    &copy; 2019 Hype
+                  </div>
+
+                  <div class="row mb-10 wrap">
+                    <a href="#" class="text h6 mr-10">About</a>
+                    <a href="#" class="text h6 mr-10">Careers</a>
+                    <a href="#" class="text h6 mr-10">Logos</a>
+                    <a href="#" class="text h6 mr-10">Terms</a>
+                    <a href="#" class="text h6 mr-10">Privacy</a>
+                  </div>
+
+                  <div class="text capitalize h7 mb-10 muted w-light">
+                    CONNECT WITH US
+                  </div>
+
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <script>
+      feather.replace();
+
+
+      zingchart.THEME="classic";
+      var myConfig = {
+          "type": "bar",
+          "legend":{
+          },
+          "background-color": "#ffffff",
+          "title": {
+              "text": "Positive sentiment based on age & ethinicity of responders",
+              "background-color": "#ffffff",
+              "color": "#a6a6a6"
+          },
+          "scroll-x": {
+              "handle": {
+                  "background-color": "white",
+                  "border-left": "1px solid #a6a6a6",
+                  "border-right": "1px solid #a6a6a6",
+                  "border-top": "1px solid #a6a6a6",
+                  "border-bottom": "1px solid #a6a6a6",
+                  "border-radius": "5px"
+              },
+              "bar": {
+                  "background-color": "#a6a6a6",
+                  "alpha": 0.5,
+                  "border-radius": "5px"
+              }
+          },
+          "scaleX": {
+              "line-color": "#a6a6a6",
+              "line-width": 0,
+              "guide": {
+                  "line-color": "#a6a6a6",
+                  "line-style": "solid"
+              },
+              "tick": {
+                  "line-color": "#a6a6a6",
+                  "line-width": 1,
+                  "visible": 0
+              },
+              "item": {
+                  "color": "#a6a6a6"
+              },
+              "labels": [
+                  "20-30 yrs",
+                  "30-40 yrs",
+                  "40-50 yrs",
+                  "50-60 yrs",
+              ],
+              "zooming": true,
+              "zoom-to": [
+                  0,
+                  3
+              ]
+          },
+          "scaleY": {
+              "line-color": "#a6a6a6",
+              "line-width": 1,
+              "guide": {
+                  "line-style": "solid",
+                  "line-color": "#a6a6a6"
+              },
+              "tick": {
+                  "line-color": "#a6a6a6",
+                  "line-width": 1
+              },
+              "item": {
+                  "color": "#a6a6a6"
+              },
+              "label": {
+                  "text": "Positive sentiment",
+                  "color": "#a6a6a6"
+              }
+          },
+          "tooltip": {
+                  "text":"%v Million units<br>sold in %kl",
+                  "text-align":"left",
+                  "shadow": 0,
+                  "border-radius": 5
+              },
+          "plot": {
+              "alpha":0.6,
+              "border-radius-top-right": 5,
+              "border-radius-top-left": 5,
+              "scroll-step-multiplier": 1,
+              "animation":{
+                "sequence":2 // takes zoomTo animation by default
+              }
+          },
+          "series": [
+              {
+                  "values": [
+                      42,
+                      43,
+                      30,
+                      40,
+                  ],
+                  "text": "Black Female",
+                  "background-color": "#f7846a"
+              },
+              {
+                  "values": [
+                      51,
+                      53,
+                      47,
+                      42,
+                  ],
+                  "text": "Black Male",
+                  "background-color": "#ffc94e"
+              },
+              {
+                  "values": [
+                      69,
+                      68,
+                      54,
+                      55,
+                  ],
+                  "text": "Indian Female",
+                  "background-color": "#f1f14e"
+              },
+              {
+                  "values": [
+                      52,
+                      46,
+                      35,
+                      26,
+                  ],
+                  "text": "Coloured Female",
+                  "background-color": "#92e4c9"
+              }
+          ]
+      };
+
+      zingchart.render({
+      	id : 'myChart',
+      	data : myConfig,
+      });
+
+    </script>
+  </body>
+</html>

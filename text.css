@@ -1,0 +1,31 @@
+.text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #22252A;
+  display: inline-block;
+}
+
+.h1 { font-size: 32px; font-weight: 500; }
+.h2 { font-size: 28px; font-weight: 500; }
+.h3 { font-size: 24px; font-weight: 500; }
+.h4 { font-size: 20px; font-weight: 500; }
+.h5 { font-size: 16px; font-weight: 500; }
+.h6 { font-size: 14px; font-weight: 500; }
+.h7 { font-size: 12px; font-weight: 500; }
+.h8 { font-size: 10px; font-weight: 500; }
+
+.muted { color: #AEB5BC; }
+.muted svg { stroke: #AEB5BC; }
+
+.highlight { color: #47A6E5; }
+.highlight svg { stroke: #47A6E5; }
+
+.inverted { color: #F8F9FA; }
+.inverted svg { stroke: #F8F9FA; }
+
+.capitalize { text-transform: uppercase; }
+
+.w-light { font-weight: 400; }
+.w-normal { font-weight: 500; }
+.w-heavy { font-weight: 700; }
+.w-x-heavy { font-weight: 900; }
